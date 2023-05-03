@@ -19,12 +19,15 @@ public class DepartmentService {
         return departmentRepository.findAll();
     }
 
+    public  Department getByIdDepartment(Long id) {return  departmentRepository.findById(id).get();}
+
     public List<Department> getDepartmentByDate(LocalDate localDate){
         return departmentRepository.findByStartDate(localDate);
     }
     public Department createDepartment(DepartmentDTO departmentDTO){
         Department department = new Department();
         department.setName(departmentDTO.getName());
+        department.setStartDate(LocalDate.now());
         return departmentRepository.save(department);
     }
     public void deleteDepartment(Long deptId) {
@@ -36,6 +39,7 @@ public class DepartmentService {
         Department updateDepartment = department.get();
         updateDepartment.setName(departmentDTO.getName());
         updateDepartment.setStartDate(departmentDTO.getStartDate());
+
         return departmentRepository.save(updateDepartment);
     }
 }

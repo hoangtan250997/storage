@@ -1,6 +1,7 @@
 package com.example.demo.rest;
 
 import com.example.demo.entity.Department;
+import com.example.demo.rest.API.DepartmentAPI;
 import com.example.demo.service.DepartmentService;
 import com.example.demo.service.dto.DepartmentDTO;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-public class DepartmentResource implements DepartmentAPI{
+public class DepartmentResource implements DepartmentAPI {
 
     private final DepartmentService departmentService;
     @Override
@@ -46,7 +47,7 @@ public class DepartmentResource implements DepartmentAPI{
 
     @Override
     public ResponseEntity<Department> getDepartmentById(Long deptId) {
-        return null;
+          return ResponseEntity.ok(departmentService.getByIdDepartment(deptId));
     }
 
 }

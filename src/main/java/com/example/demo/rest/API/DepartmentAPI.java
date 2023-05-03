@@ -1,4 +1,4 @@
-package com.example.demo.rest;
+package com.example.demo.rest.API;
 
 import com.example.demo.entity.Department;
 import com.example.demo.service.dto.DepartmentDTO;
