@@ -1,14 +1,8 @@
 package com.example.demo.rest;
 
-import com.example.demo.entity.Department;
-import com.example.demo.entity.DepartmentLocation;
-import com.example.demo.entity.Employee;
-import com.example.demo.entity.Relatives;
+import com.example.demo.entity.*;
 import com.example.demo.rest.API.FindAllAPI;
-import com.example.demo.service.DepartmentLocationService;
-import com.example.demo.service.DepartmentService;
-import com.example.demo.service.EmployeeService;
-import com.example.demo.service.RelativesService;
+import com.example.demo.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +17,8 @@ public class FindAllResource implements FindAllAPI {
     private final DepartmentService departmentService;
     private final DepartmentLocationService departmentLocationService;
     private final RelativesService relativesService;
+
+    private final ProjectService projectService;
 
     @Override
     public ResponseEntity<List<Employee>> getAllEmpployee() {
@@ -42,6 +38,11 @@ public class FindAllResource implements FindAllAPI {
     @Override
     public ResponseEntity<List<Relatives>> getAllRelatives() {
         return ResponseEntity.ok(relativesService.findAllRelatives());
+    }
+
+    @Override
+    public ResponseEntity<List<Project>> findAllProjects() {
+        return ResponseEntity.ok(projectService.findAll());
     }
 
 }
