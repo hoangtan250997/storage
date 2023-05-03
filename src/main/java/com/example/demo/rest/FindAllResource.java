@@ -19,6 +19,7 @@ public class FindAllResource implements FindAllAPI {
     private final RelativesService relativesService;
 
     private final ProjectService projectService;
+    private final AssignmentService assignmentService;
 
     @Override
     public ResponseEntity<List<Employee>> getAllEmpployee() {
@@ -45,4 +46,8 @@ public class FindAllResource implements FindAllAPI {
         return ResponseEntity.ok(projectService.findAll());
     }
 
+    @Override
+    public ResponseEntity<List<Assignment>> findAll() {
+        return ResponseEntity.ok(assignmentService.findAllAsignment());
+    }
 }

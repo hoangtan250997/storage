@@ -23,5 +23,7 @@ public interface FindAllAPI {
     ResponseEntity<List<Relatives>> getAllRelatives();
     @GetMapping(value = "/projects")
     ResponseEntity<List<Project>> findAllProjects();
+    @GetMapping(value = "/assignments")
+    ResponseEntity<List<Assignment>> findAll();
 
 }
