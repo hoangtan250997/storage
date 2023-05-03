@@ -3,6 +3,7 @@ package com.example.demo.rest.API;
 import com.example.demo.entity.Department;
 import com.example.demo.entity.DepartmentLocation;
 import com.example.demo.entity.Employee;
+import com.example.demo.entity.Relatives;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,5 +21,8 @@ public interface FindAllAPI {
 
     @GetMapping(value="/locations")
     ResponseEntity<List<DepartmentLocation>> getAllLocation();
+
+    @GetMapping(value="/relatives")
+    ResponseEntity<List<Relatives>> getAllRelatives();
 
 }
