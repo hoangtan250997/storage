@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class EmployeeResource implements EmployeeAPI {
@@ -34,5 +36,8 @@ public class EmployeeResource implements EmployeeAPI {
         return ResponseEntity.noContent().build();
     }
 
-
+    @Override
+    public ResponseEntity<List<Employee>> getEmployeeByLastNameAndFirstName(String lastName, String firstName) {
+        return ResponseEntity.ok(employeeService.getEmployeeByLastNameAndFirstName(lastName, firstName));
+    }
 }

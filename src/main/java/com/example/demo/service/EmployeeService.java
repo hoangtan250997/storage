@@ -56,6 +56,11 @@ public class EmployeeService {
     public void deleteEmployeeById(Long id){
         employeeRepository.deleteById(id);
     }
+
+    //Find By Last Name And First Name
+    public List<Employee> getEmployeeByLastNameAndFirstName(String lastName, String firstName){
+        return employeeRepository.findByLastNameAndFirstName(lastName, firstName);
+    }
 }
 
 
